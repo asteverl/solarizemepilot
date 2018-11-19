@@ -1,0 +1,267 @@
+//
+// PAGE LAYOUT
+//
+
+.project-show-container{
+  display: flex;
+  width: auto;
+  justify-content: space-between;
+  margin: 0 5%;
+}
+
+.project-show-investment-panel {
+  display: flex;
+  flex: 0 0 30%;
+  margin-top: 44px;
+}
+
+.project-show-informations-panel {
+  margin-top: 30px;
+  display:flex;
+  flex-wrap: wrap;
+  flex: 0 0 66%;
+  // Gives all cards a margin top, for mobile display
+
+  > * {
+    margin-top: 50px;
+  }
+
+  .card-projects {
+    margin: 15px 0px;
+  }
+}
+
+
+//
+// FONTS MODIFIERS
+//
+
+.project-show-informations-panel {
+  h3 {
+    font-size: 2rem;
+    font-weight: bolder;
+    padding-bottom: 10px;
+  }
+
+  p {
+    font-size: 1.7rem;
+    font-weight: lighter;
+    padding: 10px 5px 0 5px;
+  }
+
+  i {
+    width: 40px;
+  }
+}
+
+.show-flex-three {
+  position: fixed;
+  height: 460px;
+}
+
+.card__completion-rate-text {
+  font-size: 2rem;
+}
+
+.button-back-showpage{
+  margin-top: 30px;
+}
+
+.show-flex-one, .show-flex-two, .show-flex-three {
+  flex: 0 0 30%;
+}
+
+.show-flex-two{
+  min-width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-left: 40px;
+  color: white;
+}
+
+.icon-container-show{
+  padding: 10px;
+  align-items: top;
+  font-size: 24px;
+  p {
+    padding: 0px;
+  }
+  i {
+    width: 28px;
+    opacity: .5;
+    font-size: 17px;
+  }
+  .form-control-label {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+.estimated-roi-show {
+  border-left: solid #004c64 6px;
+  border-radius: 4px;
+  p{
+    font-weight: bolder;
+  }
+}
+.show-flex-three{
+  min-width: 340px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  border: solid #004c64 2px;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 40px;
+  background: #004c64;
+  box-shadow: outset 0 1px 13px 0 rgba(0, 0, 0, 0.53);
+
+  >h3 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+  .btn-main-green {
+    width: auto;
+  }
+
+}
+
+.show-flex-four {
+  flex: 0 0 100%;
+  min-width: 340px;
+  padding: 10px;
+  color: white;
+  height: auto;
+  p {
+    padding: 10px 30px 0 0px;
+    text-align: justify;
+  }
+}
+
+.show-flex-five {
+  padding: 10px;
+  flex: 0 0 100%;
+  min-width: 340px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+
+  h3 {
+    padding-bottom: 20px;
+    color: white;
+  }
+}
+
+.investment-container-form {
+  padding: 10px;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}
+
+
+#investment_number_of_panels{
+  width: 80px;
+}
+
+.number-panels-form{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.form-control-label {
+  color:white;
+  font-weight: normal;
+  width: 150px;
+  padding: 10px 5px 10px 5px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .project-show-informations-panel {
+    flex: 0 0 50%;
+  }
+  .project-show-investment-panel {
+    flex: 0 0 50%;
+    justify-content: center;
+  }
+  .show-flex-three {
+    width:33%;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+
+  .project-show-container {
+    flex: 0 0 100%;
+    justify-content: center;
+  }
+
+  .project-show-investment-panel {
+    height: 70px;
+    width: 100vw;
+    display: block;
+    margin-top: 0px;
+    position: fixed;
+    z-index: 99;
+    bottom: 0;
+    left: 0;
+    border-radius: 0px;
+    box-shadow: 0 -1px 2px 2px rgba(0,0,0,0.2);
+  }
+
+  .project-show-informations-panel {
+    justify-content: center;
+
+    .show-flex-three{
+      width: 100%;
+      padding-top: 0px;
+      height: 70px;
+
+      .icon-container-show {
+        padding: 5px 10px;
+      }
+    // We don't have the place to show these informations on the mobile view
+    h3, #price-of-selected-panels, #available-panels {
+      display: none;
+    }
+  }
+
+  .investment-container-form {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+    form {
+      width:100%;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  #number-panels-selected-investment {
+    margin: 0px;
+    flex: auto;
+  }
+
+  .btn-main-green {
+    margin: 0px 10px;
+  }
+
+  .form-control-label {
+    flex: 0 0 52%;
+    padding: 0px;
+  }
+}
+
+
+}

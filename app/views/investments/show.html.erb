@@ -1,0 +1,32 @@
+<div class="container after-payment" id="js-cards-list">
+  <div class="after-payment-header"><h1> Your payment is <%= @investment.state %>! </h1></div>
+  <div class="after-payment-content">
+    <div class="after-payment-content-introduction">
+      <p>Congratulations, your investment is being processed. You will soon receive an email with all the details. We advice you to print this confirmation page as well.</p>
+    </div>
+    <table>
+      <tbody>
+        <tr>
+          <td><h3>Project name:</h3></td>
+          <td><p><%= @investment.project.name %> </p></td>
+        </tr>
+        <tr>
+          <td><h3>Number of panels:</h3></td>
+          <td><p><%= @investment.number_of_panels %> </p></td>
+        </tr>
+        <tr>
+          <td><h3>Price per panel:</h3></td>
+          <td><p> <%= humanized_money_with_symbol(@investment.project.price) %></p></td>
+        </tr>
+        <tr>
+          <td><h3>Total amount:</h3></td>
+          <td><span><p> <%= humanized_money_with_symbol(@investment.amount) %></p></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="after-payment-buttons">
+    <%= link_to "Go to my dashboard", user_path(current_user), class:"btn-main-green"  %>
+    <div class="btn-ancilliary">Print this page</div>
+  </div>
+</div>

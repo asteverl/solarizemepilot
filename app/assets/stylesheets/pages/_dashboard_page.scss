@@ -1,0 +1,22 @@
+.dashboard-container{
+  h1, h2{
+    color: white;
+    text-align: center;
+  }
+}
+
+.box-dashboard{
+ display: flex;
+ justify-content: space-evenly;
+}
+
+.project-dashboard{
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+
+.dashboard-page-header {
+  color:white;
+  margin-bottom: 30px;
+}

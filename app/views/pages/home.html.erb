@@ -1,0 +1,57 @@
+<div class="container-fluid">
+  <div class="home_banner_wrapper">
+    <section class="home_banner">
+      <div class="container home_banner_content">
+        <h1>Solarize
+        Me</h1>
+        <h2>Find a roof for your solar panels!</h2>
+        <%= link_to "Start investing now", projects_path, class: "btn-main-green" %>
+      </div>
+    </section>
+
+    <section class="home-about">
+      <div class="home-section-header">
+        <h1>Investing in solar energy takes only 3 steps!</h1>
+      </div>
+      <div class="home-section-content">
+        <div class="key-fact-home">
+          <div class="key-fact-logo">
+            <%= image_tag "002-credit-card.svg", size: "100" %>
+          </div>
+          <div class="key-fact-content">
+            <h3>We find a company with a great roof</h3>
+          </div>
+        </div>
+
+        <div class="key-fact-home">
+          <div class="key-fact-logo">
+            <%= image_tag "008-tools.svg", size: "100" %>
+          </div>
+          <div class="key-fact-content">
+            <h3>You buy some panels, we install them there </h3>
+          </div>
+        </div>
+
+        <div class="key-fact-home">
+          <div class="key-fact-logo">
+            <%= image_tag "001-yield.svg", size: "100" %>
+          </div>
+          <div class="key-fact-content">
+            <h3> The company buys your electricity!</h3>
+          </div>
+        </div>
+
+      </div>
+      <%= link_to "Learn more", learn_more_path, class: "btn-ancilliary" %>
+    </section>
+
+    <section>
+      <div class="home-call-to-action-section">
+        <div class="home-section-content">
+          <h1>Contribute to a better world</h1>
+          <%= link_to "Start investing now", projects_path, class: "btn-main-green" %>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

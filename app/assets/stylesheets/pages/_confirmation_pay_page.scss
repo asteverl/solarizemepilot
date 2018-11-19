@@ -1,0 +1,150 @@
+.payment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  height: 70vh;
+  width: 60%;
+  p {
+    font-size: 1.7rem;
+  }
+
+  &-header {
+    flex: 0 0 25%;
+    display: flex;
+    align-items: center;
+  }
+
+  &-content {
+    flex: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    hr {
+      width: 100%;
+      margin: 0px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  .payment {
+    height: auto;
+    min-height: 500px;
+    width: 100%;
+    &-header {
+      flex: 1 20%;
+    }
+    &-content {
+      flex: auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .payment {
+    width: 100%;
+  }
+}
+
+
+
+.payment-content-project_name {
+  display: flex;
+  h3 {
+    font-size: 2rem;
+  // font-weight: bolder;
+}
+}
+
+.payment-content-sections {
+  display: flex;
+  // justify-content: space-between;
+}
+
+.payment-content-sections_left-panel {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.payment-content-purchase, .payment-content-gains {
+  display: flex;
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.payment-content-purchase-icon, .payment-content-gains-icon {
+  flex: 0 0 20%;
+  display: flex;
+  align-items: center;
+}
+
+.payment-content-purchase-infos, .payment-content-gains-infos {
+  flex: auto;
+  p:first-child {
+    font-size: 2.2rem;
+    line-height: 40px;
+    span {
+      font-size: 2.7rem;
+      font-weight: bolder;
+      text-shadow: 1px 1px rgba(0,0,0,0.2);
+    }
+  }
+
+  p {
+    line-height: 30px;
+  }
+}
+
+.payment-content-stripe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirmation-container{
+  margin: 100px 30px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// .number-panels-confirmation{
+//   margin-bottom: 80px;
+// }
+
+
+.confirmation-container h5 {
+  color: white;
+  padding-bottom: 10px;
+}
+
+.amount {
+  font-size: 20px;
+  color: white;
+  padding-bottom: 10px;
+}
+
+.stripe-button-el {
+  width:200px;
+  padding: 10px;
+  display: none;
+}
+
+.button-go-back-confirm {
+  align-self: flex-start;
+  margin-top: 80px;
+}
+
+.payment-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+

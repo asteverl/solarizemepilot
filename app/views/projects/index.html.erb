@@ -1,0 +1,55 @@
+<div class="wrapper-projects">
+  <div class="container-fluid container-filter">
+
+      <div class="container index-filter-toggle">
+        <button data-toggle="collapse" data-target="#index-filter-panel" class="btn-toggle">
+          <p class="rotate">&#9660;</p>
+          <p> Click here to toggle filters</p></button>
+      </div>
+    <div id="index-filter-panel" class="collapse">
+      <div class="projects-filter-panel">
+        <%= form_tag projects_path, method: "get" do  %>
+        <div class="filter-panel-header"><p>Choose location</p></div>
+        <div class="form-group">
+          <div class="input-area">
+            <div class="category-choices">
+              <% Project.pluck(:country).uniq.each do |country| %>
+              <%= check_box_tag("location[]", country , false, class: "hidden", id: country) %>
+              <label for="<%= country %>" class="category-choice"><%= country %></label>
+              <% end %>
+            </div>
+            <!--  <%= select_tag "location", options_for_select(Project.pluck(:country).uniq), class: "dropdown-filter", include_blank: true %> -->
+          </div>
+        </div>
+
+        <div class="filter-panel-header"><p>Choose category</p></div>
+        <div class="form-group">
+          <div class="input-area">
+            <div class="category-choices">
+              <%= check_box_tag("status[]", "Crowdfunding", false, class: "hidden", id: "future") %>
+              <label for="future" class="category-choice">Crowdfunding</label>
+              <%= check_box_tag("status[]", "Completed", false, class: "hidden", id: "operational") %>
+              <label for="operational" class="category-choice">Completed</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-buttons">
+          <%= submit_tag "Filter", class: "btn-filter" %>
+          <%= link_to "Reset", projects_path, class: "btn-reset-f" %>
+        </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="cards-wrapper">
+      <div class="cards-list" id="js-cards-list">
+        <%= render partial: 'shared/card', collection: @projects %>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,15 @@
+<div class="container contactus">
+  <div class="contactus-header">
+    <h1>Please leave us your contact information.</h1>
+  </div>
+  <div class="contactus-form">
+  <%= simple_form_for @lead do |f| %>
+  <%= f.input :name, placeholder: "Your name" %>
+  <%= f.input :email, placeholder: "Your email" %>
+  <%= f.input :phone, placeholder: "Your phone number" %>
+  <%= f.input :subject, placeholder: "Why do you want to contact us" %>
+  <%= f.button :submit, "Send your contact information", class: "btn-main-green" %>
+  <% end %>
+  </div>
+</div>
+  <%= link_to "Back", :back, class: "btn-goback" %>

@@ -1,0 +1,148 @@
+.btn-main-green {
+  height: 50px;
+  width: 200px;
+  background: $button-main;
+  border-radius: 5px;
+  padding: 10px 8px;
+  color: white;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 1px 1px rgba(0,0,0,0.1);
+  text-shadow: 1px 1px rgba(0,0,0,0.1);
+  border: none;
+  &:hover {
+    text-decoration: none;
+    color: white;
+    background: $button-main-darker;
+  }
+}
+
+.btn-main-blue {
+  height: 42px;
+  width: 188px;
+  background: $button-main-alt;
+  border-radius: 5px;
+  padding: 10px 8px;
+  color: white;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 1px rgba(0,0,0,0.1);
+  font-weight: bold;
+  text-shadow: 1px 1px rgba(0,0,0,0.1);
+}
+
+.btn-ancilliary {
+  height: 50px;
+  width: 200px;
+  background: none;
+  border-radius: 5px;
+  padding: 10px 8px;
+  border: 2px solid white;
+  color: white;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 1px rgba(0,0,0,0.1);
+  font-weight: bold;
+  text-shadow: 1px 1px rgba(0,0,0,0.1);
+  &:hover {
+    text-decoration: none;
+    color: white;
+    opacity: 0.7;
+  }
+}
+
+.btn-ancilliary-long{
+  width: 258px;
+}
+
+.btn-goback {
+  height: 50px;
+  width: 150px;
+  background: none;
+  font-size: 16px;
+  color: white;
+  border: solid white 2px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  align-items: center;
+  font-weight: bold;
+  text-shadow: 1px 1px rgba(0,0,0,0.1);
+}
+
+.btn-filter{
+  display: inline-block;
+  height: 42px;
+  width: 120px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bolder;
+  background-color: #469AE0;
+  border: solid #469AE0 1px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px rgba(0,0,0,0.1);
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+a.btn-reset-f {
+  display: inline-block;
+  height: 42px;
+  width: 120px;
+  padding: 10px 20px;
+  font-weight: bolder;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 1px 1px rgba(0,0,0,0.1);
+  &:hover {
+    color: white;
+    opacity: 0.7;
+  }
+}
+
+.btn-toggle {
+  height: 40px;
+  width: 400px;
+  background: none;
+  border-radius: 5px;
+  border:none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  text-shadow: 1px 1px rgba(0,0,0,0.1);
+  p {
+    padding:0px 5px !important;
+  }
+  &:hover {
+    text-decoration: none;
+    border: none
+  }
+  &:focus {
+    outline: none;
+  }
+
+  .rotate {
+    -moz-transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    transition: all 0.4s linear;
+  }
+  .rotate.down {
+    -moz-transform:rotate(180deg);
+    -webkit-transform:rotate(180deg);
+    transform:rotate(180deg);
+  }
+}

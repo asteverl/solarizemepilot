@@ -1,0 +1,122 @@
+// Specific CSS for your home-page
+.container-fluid {
+  padding: 0px;
+}
+
+.home-about {
+  height: 100vh !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  h3 {
+    font-size: 150%;
+  }
+
+  .key-fact-home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+
+    .key-fact-logo {
+      flex: 0 0 100px;
+      min-width: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 40px;
+    }
+
+    .key-fact-content {
+      word-wrap: break-word;
+      flex: 1 1;
+      display: flex;
+      align-items: center;
+      h5 {
+        margin: 0px;
+      }
+    }
+  }
+}
+
+.home-section-header {
+  flex: 0 0 20%;
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
+}
+
+.home-section-content {
+  flex: 0 0 60%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.home-call-to-action-section {
+  background-image: linear-gradient(-240deg, rgba(63, 200, 168, 17.6) 6%, rgba(27, 22, 54, 0.6) 77%), asset-url('installpanels.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+
+  .home-section-content {
+    justify-content: center;
+
+    h1 {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .home-about {
+    .home-section-header > * {
+      font-size: 2em;
+    }
+
+    .home-section-content {
+      flex: 0 0 65%;
+      align-items: center;
+      width: 90%;
+      padding-top: 10px;
+    }
+
+    .key-fact-home {
+      width: 90%;
+      flex-direction: column;
+      flex-wrap: nowrap;
+
+      .key-fact-logo {
+        flex: auto;
+        margin-right: 0px;
+        margin: 0px 0px 15px 0px;
+        img {
+          height:60px;
+          width: 60px;
+        }
+      }
+
+      .key-fact-content {
+        justify-content: center;
+        text-align: center;
+        min-width: 0;
+        word-wrap: break-word;
+        & > * {
+          font-size: 140%;
+        }
+      }
+    }
+  }
+}

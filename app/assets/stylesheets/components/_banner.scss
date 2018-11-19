@@ -1,0 +1,99 @@
+@media only screen and (max-width: 600px) {
+  .home_banner {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient(-240deg, rgba(63, 200, 168, 17.6) 6%, rgba(27, 22, 54, 0.6) 77%), asset-url('solarpower.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .home_banner_content {
+    color: white;
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    h1 {
+      font-size: 55px;
+      padding: 50px 10px 0 10px;
+      margin: 0 10px 20px 10px;
+      font-family: $banner-font;
+      text-shadow: 1px 1px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      font-size: 36px;
+      padding: 0 10px;
+      margin: 0 10px 100px 10px;
+      text-shadow: 1px 1px rgba(0,0,0,0.1);
+    }
+  }
+
+  .home_banner_wrapper .container-fluid {
+    padding: 0px;
+  }
+
+
+}
+
+@media only screen and (min-width: 768px) {
+  .home_banner_wrapper {
+    width: 100vw;
+  }
+
+  .home_banner {
+    background-color: blue;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient(-240deg, rgba(63, 200, 168, 17.6) 6%, rgba(27, 22, 54, 0.6) 46%), asset-url('solarpower.png');
+    background-size: cover;
+    background-position: center;
+  }
+  .home_banner_content {
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    h1 {
+      font-size: 55px;
+      padding: 50px 10px 0 10px;
+      margin: 0 10px 20px 10px;
+      font-family: $banner-font;
+    }
+
+    h2 {
+      font-size: 36px;
+      padding: 0 10px;
+      margin: 0 10px 40px 10px;
+    }
+
+    .banner-text {
+      flex: 1 1 80%;
+    }
+
+  }
+  .cards-list > h2{
+    font-size: 46px;
+    color: white;
+  }
+
+  .home_banner_content, .home-call-to-action-section {
+    .btn-main-green, .btn-ancilliary {
+      width: 230px;
+      height: 60px;
+      font-weight: bold;
+      font-size: 120%;
+    }
+  }
+}
+

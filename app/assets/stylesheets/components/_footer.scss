@@ -1,0 +1,25 @@
+.footer {
+  flex: 0 0 40px;
+  width: 100vw;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0px 10px;
+  color: white;
+  z-index: 98;
+  width: 100vw;
+  a {
+    color: white;
+    text-decoration: none;
+    padding: 0px 5px;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  > * {
+    margin: 0px 5px;
+  }
+}
+
+

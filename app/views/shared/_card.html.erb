@@ -1,0 +1,27 @@
+<%= link_to project_path(card), class: "card-projects" do %>
+  <div class="card-header-projects text-left" style="background-image: linear-gradient(-535deg, rgba(0, 101, 168, 0) 0%, rgba(16, 28, 33, 0.63) 91%), url( <%= cl_image_path card.photo %>);">
+    <div class="card-title-and-company-name">
+      <h1> <%= card.name %> </h1>
+      <h3> Hosted by <%= card.user.company_name %> </h3>
+    </div>
+    <%= cl_image_tag card.user.photo, class: "card-company-logo" %>
+  </div>
+
+ <div class="card-content">
+    <div class="card-financial-details text-left">
+      <div class="card__completion-rate-text">
+        <strong><%= number_to_percentage(card.completion_rate, precision: 0)%></strong> funded
+      </div>
+      <progress  max="100" value="<%= card.completion_rate %>"> <%= card.completion_rate %> </progress>
+      <div class="card__completion-rate-text">
+        <%= card.status == "Completed" ? "Raised" : "Raising" %> <strong><%= humanized_money_with_symbol(card.total_cost) %></strong> !
+      </div>
+    </div>
+
+    <div class="card-horizontal-line"></div>
+    <div class="card-country-projects">
+      <h2><%= card.status %> - <%= card.days_to_completion %></strong> days remaining</h2>
+    </div>
+</div>
+<% end %>
+

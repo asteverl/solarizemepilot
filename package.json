@@ -1,0 +1,16 @@
+{
+  "name": "SolarizeMe",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "3.5",
+    "bootstrap": "3",
+    "chart.js": "^2.7.2",
+    "chartkick": "^3.0.1",
+    "gmaps": "^0.4.24",
+    "highcharts": "^6.1.1",
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
+  }
+}

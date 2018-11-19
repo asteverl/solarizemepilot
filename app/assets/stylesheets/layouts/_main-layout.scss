@@ -1,0 +1,56 @@
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.yielded-content {
+  flex: 1 1 auto;
+  width: 100%;
+  padding-top: 70px;
+  padding-bottom: 40px;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+}
+
+.page-header {
+  color:white;
+  border-bottom: none;
+}
+
+body {
+  background: linear-gradient(44.91deg, #54D0EB -25.62%, #1F6279 100.24%), #C4C4C4;
+  font-size: 14px;
+  margin: 0px;
+  padding: 0px;
+}
+
+p {
+  font-size: 1em;
+  margin-bottom: 0px;
+  text-shadow: 1px 1px rgba(0,0,0,0.1);
+}
+
+h3 {
+  font-size: 0.85em;
+  text-transform: uppercase;
+  margin: 0px;
+  text-shadow: 1px 1px rgba(0,0,0,0.1);
+}
+
+h2 {
+  font-size: 1.14em;
+  font-weight: bold;
+  text-shadow: 1px 1px rgba(0,0,0,0.1);
+}
+
+h1 {
+  font-size: 2.28em;
+  font-weight: bold;
+  margin: 0px;
+  text-shadow: 1px 1px rgba(0,0,0,0.1);
+}

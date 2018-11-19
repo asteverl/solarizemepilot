@@ -1,0 +1,143 @@
+<!-- VARIABLES -->
+<div class="dashboard-page-header text-center">
+  <h1>My investments</h1>
+</div>
+<!-- tab to select project -->
+<!--     <div class="investment-all-dashes"> -->
+  <div class="container">
+    <div class="dashboard-tabs">
+      <% count = 0 %>
+      <% @user.investments.each do |investment| %>
+      <% if count == 0 %>
+      <%= link_to "#{investment.project.name}", "javascript:void();", class: "all-investment-tabs dashboard-tab active", id: "investment-dash-tab-#{investment.id}" %>
+      <% else %>
+      <%= link_to "#{investment.project.name}", "javascript:void();", class: "all-investment-tabs dashboard-tab", id: "investment-dash-tab-#{investment.id}" %>
+      <% end %>
+      <% count += 1 %>
+      <% end %>
+    </div>
+  </div>
+  <!--     </div> -->
+  <!-- This probably needs to be refactor into several components -->
+  <div style="background-color: #165469; box-shadow: 1px 5px 18px 5px #00000036;
+}" class="wrapper-projects">
+<div class="container" id="js-cards-list">
+  <%= javascript_pack_tag "init_charts" %>
+
+  <% countdash = 0 %>
+  <% @user.investments.each do |investment| %>
+  <div id="main-dashboard-<%= investment.id %>" class="investment-all-dashes <%= 'dashboard-hide' if countdash > 0 %>" data-investmentprod="<%= investment.id %>" data-investment="<%= investment.id %>" >
+    <% countdash += 1 %>
+    <div class="cards-list" >
+
+      <!-- Project detail div -->
+      <div class="card-projects card-projects-dash ">
+        <%= render 'shared/card', :card => investment.project %>
+      </div>
+
+
+
+      <!-- Financials detail div -->
+      <div class="card-projects card-projects-dash ">
+        <div class="container-info-card">
+          <div class="dashboard-card-header">
+            <h3>Financial panel</h3>
+            <hr>
+          </div>
+
+          <!-- tab select income or duration -->
+
+          <div class="dashboard-tabs">
+            <%= link_to "Duration", "javascript:void();", class: "dashboard-tab active", id: "yourdurationtab-#{investment.id}" %>
+            <%= link_to "Income", "javascript:void();", class: "dashboard-tab", id: "yourincometab-#{investment.id}" %>
+          </div>
+
+          <div class="card-investment-details">
+
+            <div class="dashboard-box" id="duration-box-<%= investment.id %>">
+              <h2>Project duration, months</h2>
+              <%= pie_chart ({"Past" => investment.project.active_months, "Remaining" => investment.project.remaining_months}), id: "pie-chart-#{investment.id}", height: "200px", donut: true,
+              library: {
+                plotOptions: {
+                  pie: {
+                    dataLabels: {
+                      enabled: false
+                    },
+                    showInLegend: true
+                  }
+                }
+              } %>
+
+            </div>
+
+            <div class="dashboard-box dashboard-hide" id="income-box-<%= investment.id %>">
+              <h2>Investment income in EUR</h2>
+              <%= bar_chart ({"Past gains" => investment.past_gains, "Remaining gains" => investment.remaining_gains}), id: "users-chart-#{investment.id}", height: "200px" %>
+            </div>
+            <div class="card-investment-details text-left">
+              <hr>
+              <h2><strong><%= humanized_money_with_symbol(investment.amount) %></strong> invested</h2>
+              <h2><strong> <%= humanized_money_with_symbol(investment.income_per_year) %></strong> income per year</h2>
+              <h2><strong><%= humanized_money_with_symbol(investment.total_gains) %></strong> gains estimated until the end of the contract</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Production detail div -->
+      <div class="card-projects card-projects-dash">
+        <div class="container-info-card">
+          <div class="dashboard-card-header">
+            <h3>Production panel</h3>
+            <hr>
+          </div>
+
+          <!-- tab to select production by period -->
+          <div class="dashboard-tabs">
+            <%= link_to "Daily", "javascript:void();", class: "dashboard-tab active", id: "yourdaytab-#{investment.id}" %>
+            <%= link_to "Monthly", "javascript:void();", class: "dashboard-tab", id: "yourmonthtab-#{investment.id}" %>
+            <%= link_to "Yearly", "javascript:void();", class: "dashboard-tab", id: "youryearstab-#{investment.id}" %>
+          </div>
+
+          <div class="dashboard-box" id="daily-production-<%= investment.id %>">
+            <h2>Today's production, kW</h2>
+            <% if investment.project.comissioning_date > Date.today %>
+            <%= "project not yet operational" %>
+            <% end %>
+            <%= line_chart investment.project.outputs.group_by_hour(:detailedtime, format: "%-l %P").average("production * #{investment.share_of_total_power}"), height: "200px" %>
+          </div>
+
+          <div class="dashboard-box dashboard-hide" id="monthly-production-<%= investment.id %>">
+            <h2> Last month's production, kWh </h2>
+            <%= column_chart investment.last_month_outputs.group_by_day(:date, format: "%d %m").sum("quantity * #{investment.share_of_total_power}"), height: "200px" %>
+          </div>
+
+          <div class="dashboard-box dashboard-hide" id="yearly-production-<%= investment.id %>">
+            <h2> Last year's production, MWh </h2>
+            <%= column_chart investment.project.outputs.group_by_month(:date, format: "%Y-%m").sum("quantity * #{investment.share_of_total_power}"), height: "200px" %>
+          </div>
+
+          <div class="card-investment-details text-left">
+            <hr>
+            <h2><strong><%= investment.kwc %> kWc</strong> total power installed (<%= investment.number_of_panels %> panels)</h2>
+            <h2><strong><%= investment.co2_tonn_lifetime %></strong> tons of CO2 will be saved in total.</h2>
+            <h2> It's equivalent to <strong>planting <%= number_with_precision(investment.trees_lifetime, :precision => 0) %> <i class="fas fa-tree"></i></strong>. Good job!</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% end %>
+
+  <!-- footers -->
+  <div class="box-dashboard">
+    <%= link_to "Edit my profile", edit_user_registration_path(current_user), class: "btn-main-green" %>
+    <%= link_to 'Back', :back, class: "btn-ancilliary" %>
+  </div>
+</div>
+</div>
+
+
+
+

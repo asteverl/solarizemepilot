@@ -1,0 +1,163 @@
+.dashboard-tabs {
+  // background: #53443F;
+  display: flex;
+  padding: 10px 10px 0px 10px;
+  // width: 100%;
+}
+
+.card-investment-details {
+  h2:last-child {
+    font-size: 1.9rem;
+    border-left: 3px solid #484848;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: absolute;
+    bottom: 20px;
+    height: 75px;
+  }
+  .fa-tree {
+    color: green;
+  }
+  hr {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border: 0;
+    border-top: 1px solid $light-gray;
+  }
+}
+
+.dashboard-card-header {
+  text-align: center;
+  font-size: 1.7rem;
+  hr {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border: 0;
+    border-top: 1px solid #00556B;
+  }
+}
+
+.investment-all-dashes {
+
+  .card-projects-dash {
+    position: relative;
+    height: 500px;
+    &:hover {
+      opacity: 1;
+    }
+    &:first-child:hover {
+      opacity: 0.9;
+    }
+    h1, h3 {
+      color: black;
+      .card-projects {
+        height: 500px;
+
+      }
+    }
+
+  // box-shadow: 0 8px 6px -6px black;
+
+  .card-projects {
+    &:hover {
+      opacity: 1;
+    }
+    .card-header-projects {
+      top: -15px;
+    }
+    .card-project-image {
+      height: 200px;
+      .card-projects-dash {
+      }
+    }
+    .card-title-and-company-name {
+    }
+  }
+}
+}
+
+.dashboard-box {
+  // box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+  h2 {
+    font-size: 15px;
+    font-weight: 300;
+    padding: 8px 5px;
+    color: $text-dark;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: left;
+  }
+}
+
+#tab-list-padding {
+  // background: #53443F;
+  padding: 4px 10px !important;
+}
+
+
+.dashboard-tabs a {
+  color: black;
+}
+.dashboard-tabs a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 0.8;
+}
+.dashboard-tabs h3 {
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 0;
+}
+.dashboard-tabs p {
+  opacity: 0.5;
+  margin-bottom: 0;
+}
+.dashboard-tab {
+  background: rgb(200,200,200);
+  flex: 0 0 25%;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.container-info-card {
+  .dashboard-tabs {
+    padding: 10px 10px 0px 5px;
+  }
+
+  .dashboard-tab {
+    background-color: $light-gray;
+    padding: 2px;
+    &:first-child, &:last-child {
+      border-radius: 0px;
+    }
+    a {
+
+      color: $text-dark;
+    }
+    &.active {
+      color: white;
+    }
+  }
+}
+
+.dashboard-tab:first-child {
+  border-radius: 10px 0 0 0;
+}
+.dashboard-tab:last-child {
+  border-radius: 0 10px 0 0;
+}
+.dashboard-tab.active {
+  background: #165469;
+  // border: 1px solid rbg(1,1,1);
+  color: white;
+}
+
+.dashboard-hide {
+  display: none;
+}
+
+.dashboard-image {
+  box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+  border: 1px, solid, rgba(0,0,0,0.4);
+}
+

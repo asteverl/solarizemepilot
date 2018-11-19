@@ -1,0 +1,55 @@
+<div class="container payment" id="js-cards-list">
+  <div class="payment-header"><h1>Investment confirmation</h1></div>
+  <div class="payment-content">
+    <div class="payment-content-project_name">
+      <h3><%= icon("fas", "building") %> <%= @investment.project.name %></h3>
+    </div>
+    <hr>
+    <div class="payment-content-sections">
+      <div class="payment-content-sections_left-panel">
+        <div class="payment-content-purchase">
+          <div class="payment-content-purchase-icon">
+            <%= image_tag "002-credit-card.svg", size: "80" %>
+          </div>
+          <div class="payment-content-purchase-infos">
+            <p> <strong>Total amount due: <span><%= humanized_money_with_symbol(@investment.amount) %></span> </strong></p>
+            <p> Your are purchasing  <%= pluralize(@investment.number_of_panels, "panel") %> </p>
+            <p> Price per panel:  <%= humanized_money_with_symbol(@investment.project.price) %></p>
+          </div>
+        </div>
+        <div class="payment-content-gains">
+          <div class="payment-content-gains-icon">
+            <%= image_tag "001-yield.svg", size: "80" %>
+          </div>
+          <div class="payment-content-gains-infos">
+            <p><strong>Lifetime income: <span><%= humanized_money_with_symbol(@investment.total_gains) %></span> </strong>(approx)</p>
+            <p>Income per year: <%= humanized_money_with_symbol(@investment.income_per_year) %> (approx)</p>
+            <p>CO2 savings: <%= @investment.co2_tonn_lifetime %> tons </p>
+            <p>Project duration: <%= @investment.project.duration_months / 12 %> years </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="payment-buttons">
+      <%= link_to 'Back', :back, class: "btn btn-goback" %>
+      <div class="payment-content-stripe">
+        <%= form_tag project_investment_payments_path(@investment) do %>
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-name="Project investment"
+        data-email="<%= current_user.email %>"
+        data-description="Project <%= @investment.project.name %>"
+        data-amount="<%= @investment.amount_cents %>"
+        data-currency="<%= @investment.amount.currency %>"></script>
+        <script>
+        // Hide default stripe button, be careful there if you
+        // have more than 1 button of that class
+        document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+      </script>
+      <button type="submit" class="btn-main-green">Invest now</button>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
+

@@ -1,0 +1,5 @@
+meta_product_name: "Solarize Me"
+meta_title: "Solarize Me - Find a roof for your solar panels!"
+meta_description: "Invest in solar panels. We find a roof for them, we install them and keep them working. We sell the electricity they produce for you, and you get a revenue each year."
+meta_image: "solarpowerog.png"                       # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

@@ -1,0 +1,143 @@
+/* Main navbar */
+.navbar-solarize {
+  top: 0px;
+  min-height: 70px;
+  flex: 0 0 70px;
+  background: none;
+  // transition: all 0.3s ease;
+  padding: 0px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  z-index: 9999;
+  width: 100vw;
+  position: fixed; //by giving the #yielded-content a padding-top of 70px, the navbar doesn't overlaps the content despite the fixed position.
+  a {
+    color: white;
+    text-decoration: none;
+
+  }
+}
+
+
+/* Classes for javascript interaction */
+.navbar-toggle-content {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 750ms ease-in-out, background-color 750ms ease-in-out;
+}
+
+.navbar-toggle-content.is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.navbar-dark-background {
+  background-color: #41869e;
+  opacity: 0.9;
+}
+
+/* COMPONENTS OF THE NAVBAR */
+
+/* Left section */
+.navbar-solarize-logo-and-brand {
+  flex: initial;
+  display: flex;
+  .navbar-solarize-brand {
+    letter-spacing: 2px;
+    font-size: 20px;
+    font-weight: 100;
+  }
+  .navbar-solarize-logo {
+    font-size: 26px;
+  }
+}
+
+.navbar-solarize-brand {
+  margin-left: 5px;
+  font-family: $banner-font;
+  line-height: 1.7;
+}
+
+/* Right section */
+.navbar-solarize-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .active {
+    font-weight: bold;
+  }
+}
+
+/* Basic navbar item */
+.navbar-solarize-item {
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+/* Search box */
+.navbar-solarize-search {
+  font-size: 16px;
+}
+
+/* Navbar link */
+.navbar-solarize-link {
+  color: white;
+  // color: #616668;
+  font-size: 16px;
+
+
+}
+.navbar-solarize-link:hover {
+  // color: #da552f;
+  color: white;
+  text-decoration: none;
+
+}
+
+/* Dropdown menu */
+.navbar-solarize-item.dropdown {
+  padding: 0 0 0 20px;
+}
+.navbar-solarize-dropdown-menu {
+  margin-top: 15px;
+  box-shadow: 1px 1px 4px #E6E6E6;
+  border-color: #E6E6E6;
+}
+.navbar-solarize-dropdown-menu li > a {
+  transition: color 0.3s ease;
+  font-weight: lighter !important;
+  color: #999999 !important;
+  font-size: 14px !important;
+  line-height: 22px !important;
+  padding: 10px 20px;
+}
+.navbar-solarize-dropdown-menu li > a:hover {
+  background: transparent !important;
+  color: black !important;
+}
+.navbar-solarize-dropdown-menu:before {
+  content: ' ';
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  right: 10px;
+  top: -6px;
+  background-color: white;
+  transform: rotate(45deg);
+  border-left: 1px solid #E6E6E6;
+  border-top: 1px solid #E6E6E6;
+}
+
+@media only screen and (max-width: 375px) {
+  .navbar-solarize-logo {
+    font-size: 18px !important;
+    letter-spacing: 0px !important;
+  }
+
+  .navbar-solarize-brand {
+    font-size: 18px !important;
+    letter-spacing: 0px !important;
+  }
+}
